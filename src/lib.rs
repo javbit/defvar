@@ -1,7 +1,9 @@
+pub extern crate once_cell;
+
 #[macro_export]
 macro_rules! defvar {
     { $name:ident: $type:ty = $default:expr, or try $var:ident => $transform:block $(;)? } => {
-        static $name: ::once_cell::sync::Lazy<$type> = ::once_cell::sync::Lazy::new(|| {
+        static $name: $crate::once_cell::sync::Lazy<$type> = $crate::once_cell::sync::Lazy::new(|| {
             match ::std::env::var(stringify!($name)) {
                 Ok($var) => {
                     match $transform {
