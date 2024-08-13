@@ -1,6 +1,11 @@
 [package]
 name = "defvar"
+description = "A macro that makes defining environment variables easy"
+homepage = "https://deadbeef.moe/crates/defvar"
+repository = "https://github.com/javbit/defvar"
+readme = "README.md"
 version = "0.1.0"
+license = "Apache-2.0"
 edition = "2021"
 
 [dependencies]
